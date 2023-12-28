@@ -21,7 +21,6 @@ public class IntroManager : MonoBehaviour
         public Button button;
     }
     
-    [SerializeField] private string inGameSceneName = "InGame";
     [SerializeField] private List<ButtonsInfo> buttons;
     private ButtonsInfo _oldSelectedBtn;
     private ButtonsInfo _startGameBtn;
@@ -31,7 +30,6 @@ public class IntroManager : MonoBehaviour
         buttons = null;
         _oldSelectedBtn = null;
         _startGameBtn = null;
-        inGameSceneName = null;
         Debug.Log($"//. On finish with destroying references types");
     }
 
@@ -50,12 +48,13 @@ public class IntroManager : MonoBehaviour
     {
         if (inButton.buttonAction == ButtonName.StartGame)
         {
-            SceneManager.LoadScene(inGameSceneName);
+            SceneManager.LoadScene(GameConstants.InGameSceneName);
             return;
         }
         
         if(_oldSelectedBtn != null) _oldSelectedBtn.button.interactable = true;
         inButton.button.interactable = false;
+        PlayerPrefs.SetString(GameConstants.PlayerPrefsModeKey, inButton.buttonAction.ToString());
         _oldSelectedBtn = inButton;
         _startGameBtn.button.interactable = true;
     }
