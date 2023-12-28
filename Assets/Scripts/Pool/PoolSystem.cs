@@ -18,17 +18,23 @@ public class PoolSystem : MonoBehaviour
         public PoolableObject Prefab;
     }
 
+    private static PoolSystem _instance;
+    
     [SerializeField] private List<PoolInfo> poolInfos;
     private List<PoolableObject> _currentObjects;
 
     private void OnDestroy()
     {
+        _instance = null;
         poolInfos = null;
         _currentObjects = null;
     }
 
     private void Awake()
     {
+        if (_instance != null) return;
+        _instance = this;
+        
         _currentObjects = new List<PoolableObject>();
         
         for (var i = 0; i < poolInfos.Count; i++)
@@ -45,7 +51,10 @@ public class PoolSystem : MonoBehaviour
     public PoolableObject SpawnItem(ObjectType inType)
     {
         var poolItem = _currentObjects.FirstOrDefault(item=> item.Type.ToString() == inType.ToString());
-        if (poolItem == null) return null;
+        if (poolItem == null)
+        {
+            throw new NullReferenceException($"pool item type of {inType} is null");
+        }
         _currentObjects.Remove(poolItem);
         poolItem.gameObject.SetActive(true);
         return poolItem;
