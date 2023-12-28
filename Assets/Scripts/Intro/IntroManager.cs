@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class IntroManager : MonoBehaviour
@@ -13,15 +14,27 @@ public class IntroManager : MonoBehaviour
         TwoPlayers = 2,
         StartGame = 3
     }
+    
     [Serializable] public class ButtonsInfo
     {
         public ButtonName buttonAction;
         public Button button;
     }
-
+    
+    [SerializeField] private string inGameSceneName = "InGame";
     [SerializeField] private List<ButtonsInfo> buttons;
     private ButtonsInfo _oldSelectedBtn;
     private ButtonsInfo _startGameBtn;
+
+    private void OnDestroy()
+    {
+        buttons = null;
+        _oldSelectedBtn = null;
+        _startGameBtn = null;
+        inGameSceneName = null;
+        Debug.Log($"//. On finish with destroying references types");
+    }
+
     private void Awake()
     {
         _startGameBtn = buttons.FirstOrDefault(btn => btn.buttonAction == ButtonName.StartGame);
@@ -37,7 +50,7 @@ public class IntroManager : MonoBehaviour
     {
         if (inButton.buttonAction == ButtonName.StartGame)
         {
-            //startGame
+            SceneManager.LoadScene(inGameSceneName);
             return;
         }
         
