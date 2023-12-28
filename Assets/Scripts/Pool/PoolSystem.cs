@@ -39,9 +39,10 @@ public class PoolSystem : MonoBehaviour
         
         for (var i = 0; i < poolInfos.Count; i++)
         {
-            for (var j = 0; j < poolInfos[i].Amount; j++)
+            var poolInfo = poolInfos[i];
+            for (var j = 0; j < poolInfo.Amount; j++)
             {
-                var item = Instantiate(poolInfos[i].Prefab, transform);
+                var item = Instantiate(poolInfo.Prefab, transform);
                 item.Initialise(poolInfos[i].Type.ToString());
                 _currentObjects.Add(item);
             }
@@ -52,9 +53,8 @@ public class PoolSystem : MonoBehaviour
     {
         var poolItem = _currentObjects.FirstOrDefault(item=> item.Type.ToString() == inType.ToString());
         if (poolItem == null)
-        {
             throw new NullReferenceException($"pool item type of {inType} is null");
-        }
+    
         _currentObjects.Remove(poolItem);
         poolItem.gameObject.SetActive(true);
         return poolItem;
