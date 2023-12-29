@@ -43,7 +43,7 @@ public class PoolSystem : MonoBehaviour
             for (var j = 0; j < poolInfo.Amount; j++)
             {
                 var item = Instantiate(poolInfo.Prefab, transform);
-                item.Initialise(poolInfos[i].Type.ToString());
+                item.Initialise(poolInfo.Type.ToString());
                 _currentObjects.Add(item);
             }
         }
@@ -51,9 +51,11 @@ public class PoolSystem : MonoBehaviour
 
     public PoolableObject SpawnItem(ObjectType inType)
     {
-        var poolItem = _currentObjects.FirstOrDefault(item=> item.Type.ToString() == inType.ToString());
+        var poolItem = _currentObjects.FirstOrDefault(item=> item.Type == inType);
         if (poolItem == null)
+        {
             throw new NullReferenceException($"pool item type of {inType} is null");
+        }
     
         _currentObjects.Remove(poolItem);
         poolItem.gameObject.SetActive(true);

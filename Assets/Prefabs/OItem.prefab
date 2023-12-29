@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 2923944590953750488}
-  type: 1
+  type: 2
 --- !u!222 &2884984756138928636
 CanvasRenderer:
   m_ObjectHideFlags: 0
