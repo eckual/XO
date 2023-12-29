@@ -8,7 +8,7 @@ public class ClickableGridItem : MonoBehaviour
     [SerializeField] private Button button;
 
     private RectTransform _rt;
-
+    public string ItemValue;
     public RectTransform RectTransform
     {
         get
@@ -25,6 +25,8 @@ public class ClickableGridItem : MonoBehaviour
 
     private void OnDestroy()
     {
+        _rt = null;
+        button = null;
         OnClick = null;
     }
 
@@ -32,4 +34,5 @@ public class ClickableGridItem : MonoBehaviour
     {
         button.interactable = false;
     }
+    
 }
