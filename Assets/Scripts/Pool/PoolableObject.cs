@@ -1,10 +1,11 @@
+using Scripts;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PoolableObject : MonoBehaviour
 {
     [SerializeField] private Text text;
-    [SerializeField] private PoolSystem.ObjectType type;
+    [SerializeField] private ObjectType type;
 
     private RectTransform _rt;
 
@@ -17,7 +18,7 @@ public class PoolableObject : MonoBehaviour
         }
     }
     
-    public PoolSystem.ObjectType Type => type;
+    public ObjectType Type => type;
 
     private void OnDestroy()
     {

@@ -4,17 +4,20 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
+namespace Scripts
+{
+    
 public class GameController : MonoBehaviour
 {
-    private event Action<PoolSystem.ObjectType> OnCheckGameFinished;
     private static GameController _instance;
+    private event Action<ObjectType> OnCheckGameFinished;
     
     [SerializeField] private List<ClickableGridItem> gridItems;
     [SerializeField] private PoolSystem pool;
     [SerializeField] private Transform gridTransform;
     [SerializeField] private Text gameFinishedMsg;
     
-    private PoolSystem.ObjectType _currentType;
+    private ObjectType _currentType;
     private bool _hasGameStarted;
     
     private void OnDestroy()
@@ -39,10 +42,10 @@ public class GameController : MonoBehaviour
             btn.Initialise();
         }
 
-        OnCheckGameFinished += CheckGameFinish;
+        OnCheckGameFinished += IsGameFinished;
     }
 
-    private void CheckGameFinish(PoolSystem.ObjectType type)
+    private void IsGameFinished(ObjectType type)
     {
         // Check rows
         for (var i = 0; i < 3; i++)
@@ -77,7 +80,7 @@ public class GameController : MonoBehaviour
 
     private bool AreAllEqual(ClickableGridItem item1, ClickableGridItem item2, ClickableGridItem item3)
     {
-        return item1.ItemValue.Equals(item2.ItemValue) && item2.ItemValue.Equals(item3.ItemValue) && item1.ItemValue != string.Empty;
+        return item1.itemValue.Equals(item2.itemValue) && item2.itemValue.Equals(item3.itemValue) && item1.itemValue != string.Empty;
     }
 
     private void BtnClicked(ClickableGridItem gridItem)
@@ -86,29 +89,29 @@ public class GameController : MonoBehaviour
         
         if (_hasGameStarted)
         {
-            if (_currentType == PoolSystem.ObjectType.X)
+            if (_currentType == ObjectType.X)
             {
-                _currentType = PoolSystem.ObjectType.O;
+                _currentType = ObjectType.O;
                 AnimateItem(_currentType, gridItem.RectTransform.anchoredPosition);
-                gridItem.ItemValue = _currentType.ToString();
+                gridItem.itemValue = _currentType.ToString();
                 OnCheckGameFinished?.Invoke(_currentType);
                 return;
             }
 
-            _currentType = PoolSystem.ObjectType.X;
+            _currentType = ObjectType.X;
             AnimateItem(_currentType, gridItem.RectTransform.anchoredPosition);
-            gridItem.ItemValue = _currentType.ToString();
+            gridItem.itemValue = _currentType.ToString();
             OnCheckGameFinished?.Invoke(_currentType);
             return;
         }
         
-        _currentType = PoolSystem.ObjectType.X;
+        _currentType = ObjectType.X;
         AnimateItem(_currentType, gridItem.RectTransform.anchoredPosition);
-        gridItem.ItemValue = _currentType.ToString();
+        gridItem.itemValue = _currentType.ToString();
         _hasGameStarted = true;
     }
 
-    private void AnimateItem(PoolSystem.ObjectType type, Vector3 pos)
+    private void AnimateItem(ObjectType type, Vector3 pos)
     {
         var item = pool.SpawnItem(type);
         item.RectTransform.SetParent(gridTransform);
@@ -118,5 +121,5 @@ public class GameController : MonoBehaviour
         item.RectTransform.DOScale(Vector3.one, 1f).Play();
         item.RectTransform.DOAnchorPos(pos, 0.5f).Play();
     }
-    
+}
 }

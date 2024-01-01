@@ -8,7 +8,7 @@ public class ClickableGridItem : MonoBehaviour
     [SerializeField] private Button button;
 
     private RectTransform _rt;
-    public string ItemValue;
+    public string itemValue;
     public RectTransform RectTransform
     {
         get

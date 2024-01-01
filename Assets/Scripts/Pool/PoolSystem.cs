@@ -3,20 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class PoolSystem : MonoBehaviour
+namespace Scripts
 {
     public enum ObjectType
     {
         X = 1,
-        O = 2  
+        O = 2
     }
 
-    [Serializable] private struct PoolInfo
+    public class PoolSystem : MonoBehaviour
     {
-        public ObjectType Type;
-        public int Amount;
-        public PoolableObject Prefab;
-    }
+        [Serializable]
+        private struct PoolInfo
+        {
+            public ObjectType type;
+            public int amount;
+            public PoolableObject prefab;
+        }
 
     private static PoolSystem _instance;
     
@@ -40,10 +43,10 @@ public class PoolSystem : MonoBehaviour
         for (var i = 0; i < poolInfos.Count; i++)
         {
             var poolInfo = poolInfos[i];
-            for (var j = 0; j < poolInfo.Amount; j++)
+            for (var j = 0; j < poolInfo.amount; j++)
             {
-                var item = Instantiate(poolInfo.Prefab, transform);
-                item.Initialise(poolInfo.Type.ToString());
+                var item = Instantiate(poolInfo.prefab, transform);
+                item.Initialise(poolInfo.type.ToString());
                 _currentObjects.Add(item);
             }
         }
@@ -56,7 +59,7 @@ public class PoolSystem : MonoBehaviour
         {
             throw new NullReferenceException($"pool item type of {inType} is null");
         }
-    
+
         _currentObjects.Remove(poolItem);
         poolItem.gameObject.SetActive(true);
         return poolItem;
@@ -69,4 +72,5 @@ public class PoolSystem : MonoBehaviour
         _currentObjects.Add(item);
     }
     
+    }
 }

@@ -290,7 +290,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 71302317}
-  ItemValue: 
+  itemValue: 
 --- !u!1 &202667967
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,7 +427,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 202667969}
-  ItemValue: 
+  itemValue: 
 --- !u!1 &265025916
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,7 +595,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 411613775}
-  ItemValue: 
+  itemValue: 
 --- !u!1 &458531649
 GameObject:
   m_ObjectHideFlags: 0
@@ -705,9 +705,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1113989922}
-  - {fileID: 1210792878}
+  m_Children: []
   m_Father: {fileID: 1757234213}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -890,7 +888,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 979086950}
-  ItemValue: 
+  itemValue: 
 --- !u!1 &1053529076
 GameObject:
   m_ObjectHideFlags: 0
@@ -1020,12 +1018,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poolInfos:
-  - Type: 1
-    Amount: 5
-    Prefab: {fileID: 8593777346313362000, guid: 760cf9d19c7289c49bf990cbeb4b5a51, type: 3}
-  - Type: 2
-    Amount: 5
-    Prefab: {fileID: 8619402000062200460, guid: 8d454f1261e2a6b418e0eed861006f97, type: 3}
+  - type: 1
+    amount: 5
+    prefab: {fileID: 8593777346313362000, guid: 760cf9d19c7289c49bf990cbeb4b5a51, type: 3}
+  - type: 2
+    amount: 5
+    prefab: {fileID: 8619402000062200460, guid: 8d454f1261e2a6b418e0eed861006f97, type: 3}
 --- !u!1 &1113989921
 GameObject:
   m_ObjectHideFlags: 0
@@ -1051,7 +1049,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1113989921}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1065,8 +1063,8 @@ RectTransform:
   - {fileID: 1876903879}
   - {fileID: 1143959333}
   - {fileID: 1770552291}
-  m_Father: {fileID: 747242365}
-  m_RootOrder: 0
+  m_Father: {fileID: 1757234213}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -1278,7 +1276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 1143959334}
-  ItemValue: 
+  itemValue: 
 --- !u!1 &1147826624
 GameObject:
   m_ObjectHideFlags: 0
@@ -1344,7 +1342,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1210792877
 GameObject:
@@ -1371,13 +1369,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1210792877}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 747242365}
-  m_RootOrder: 1
+  m_Father: {fileID: 1757234213}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -2087,8 +2085,10 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 747242365}
+  - {fileID: 1113989922}
+  - {fileID: 1210792878}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2231,7 +2231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 1770552292}
-  ItemValue: 
+  itemValue: 
 --- !u!1 &1792274053
 GameObject:
   m_ObjectHideFlags: 0
@@ -2448,7 +2448,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 1876903880}
-  ItemValue: 
+  itemValue: 
 --- !u!1 &2073965386
 GameObject:
   m_ObjectHideFlags: 0
@@ -2585,7 +2585,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 2073965388}
-  ItemValue: 
+  itemValue: 
 --- !u!1 &2113865747
 GameObject:
   m_ObjectHideFlags: 0
@@ -2722,7 +2722,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 2113865749}
-  ItemValue: 
+  itemValue: 
 --- !u!1 &2118987090
 GameObject:
   m_ObjectHideFlags: 0
