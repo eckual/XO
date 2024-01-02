@@ -1,4 +1,4 @@
-"Welcome to the XO Unity Game!
+"Welcome to the XO Unity Game"
 
 🚧 Work in Progress 🚧
 
