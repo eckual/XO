@@ -2237,7 +2237,8 @@ MonoBehaviour:
   - {fileID: 1770552295}
   pool: {fileID: 1111531397}
   gridTransform: {fileID: 1113989922}
-  gameFinishedMsg: {fileID: 0}
+  grid: {fileID: 1113989921}
+  popUp: {fileID: 200939593}
 --- !u!1 &1695421482
 GameObject:
   m_ObjectHideFlags: 0
