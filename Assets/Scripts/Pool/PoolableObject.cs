@@ -17,7 +17,7 @@ public class PoolableObject : MonoBehaviour
             return _rt;
         }
     }
-    
+
     public ObjectType Type => type;
 
     private void OnDestroy()
