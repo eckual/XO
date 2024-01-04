@@ -2,37 +2,36 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ClickableGridItem : MonoBehaviour
+namespace Scripts
 {
-    public event Action<ClickableGridItem> OnClick;
-    [SerializeField] private Button button;
-
-    private RectTransform _rt;
-    public string itemValue;
-    public RectTransform RectTransform
+    public class ClickableGridItem : MonoBehaviour
     {
-        get
+        public event Action<ClickableGridItem> OnClick;
+        [SerializeField] private Button button;
+
+        private RectTransform _rt;
+        public string ItemValue { get; private set; }
+
+        private void OnDestroy()
         {
-            if (_rt == null) _rt = GetComponent<RectTransform>();
-            return _rt;
+            _rt = null;
+            button = null;
+            ItemValue = null;
+            OnClick = null;
         }
-    }
-    public void Initialise()
-    {
-        button.onClick.AddListener(()=> OnClick?.Invoke(this));
-    }
-    
 
-    private void OnDestroy()
-    {
-        _rt = null;
-        button = null;
-        OnClick = null;
-    }
+        public RectTransform RectTransform
+        {
+            get
+            {
+                if (_rt == null) _rt = GetComponent<RectTransform>();
+                return _rt;
+            }
+        }
 
-    public void DisableButton()
-    {
-        button.interactable = false;
+        public void Initialise() => button.onClick.AddListener(() => OnClick?.Invoke(this));
+        public void DisableButton() => button.interactable = false;
+        public void SetValue(string inValue) => ItemValue = inValue;
+
     }
-    
 }

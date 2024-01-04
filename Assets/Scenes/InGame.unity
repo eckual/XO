@@ -290,7 +290,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 71302317}
-  itemValue: 
 --- !u!1 &200939592
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,7 +307,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &200939593
 RectTransform:
   m_ObjectHideFlags: 0
@@ -323,6 +322,7 @@ RectTransform:
   m_Children:
   - {fileID: 996917719}
   - {fileID: 276627546}
+  - {fileID: 1160413495}
   m_Father: {fileID: 1757234213}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -505,7 +505,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 202667969}
-  itemValue: 
 --- !u!1 &265025916
 GameObject:
   m_ObjectHideFlags: 0
@@ -753,7 +752,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 411613775}
-  itemValue: 
 --- !u!1 &458531649
 GameObject:
   m_ObjectHideFlags: 0
@@ -1046,7 +1044,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 979086950}
-  itemValue: 
 --- !u!1 &996917718
 GameObject:
   m_ObjectHideFlags: 0
@@ -1060,7 +1057,7 @@ GameObject:
   - component: {fileID: 996917721}
   - component: {fileID: 996917720}
   m_Layer: 5
-  m_Name: Button (Legacy)
+  m_Name: replayBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1557,7 +1554,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 1143959334}
-  itemValue: 
 --- !u!1 &1147826624
 GameObject:
   m_ObjectHideFlags: 0
@@ -1625,6 +1621,86 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1160413494
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1160413495}
+  - component: {fileID: 1160413497}
+  - component: {fileID: 1160413496}
+  m_Layer: 5
+  m_Name: WinnerText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1160413495
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160413494}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 200939593}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 333, y: 161.6294}
+  m_SizeDelta: {x: 160, y: 125.6774}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1160413496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160413494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 5b4c71e3d031e114b935523eab6a05e8, type: 3}
+    m_FontSize: 98
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 98
+    m_Alignment: 3
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &1160413497
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160413494}
+  m_CullTransparentMesh: 1
 --- !u!1 &1213349285
 GameObject:
   m_ObjectHideFlags: 0
@@ -2239,6 +2315,8 @@ MonoBehaviour:
   gridTransform: {fileID: 1113989922}
   grid: {fileID: 1113989921}
   popUp: {fileID: 200939593}
+  winnerText: {fileID: 1160413496}
+  replayBtn: {fileID: 996917720}
 --- !u!1 &1695421482
 GameObject:
   m_ObjectHideFlags: 0
@@ -2589,7 +2667,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 1770552292}
-  itemValue: 
 --- !u!1 &1792274053
 GameObject:
   m_ObjectHideFlags: 0
@@ -2806,7 +2883,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 1876903880}
-  itemValue: 
 --- !u!1 &2073965386
 GameObject:
   m_ObjectHideFlags: 0
@@ -2943,7 +3019,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 2073965388}
-  itemValue: 
 --- !u!1 &2113865747
 GameObject:
   m_ObjectHideFlags: 0
@@ -3080,7 +3155,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 2113865749}
-  itemValue: 
 --- !u!1 &2118987090
 GameObject:
   m_ObjectHideFlags: 0
