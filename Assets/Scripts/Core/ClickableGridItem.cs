@@ -30,7 +30,9 @@ namespace Scripts
         }
 
         public void Initialise() => button.onClick.AddListener(() => OnClick?.Invoke(this));
+        
         public void DisableButton() => button.interactable = false;
+        
         public void SetValue(string inValue) => ItemValue = inValue;
 
     }
