@@ -31,4 +31,5 @@ public class PoolableObject : MonoBehaviour
         text.text = inText;
         gameObject.SetActive(false);
     }
+    
 }
