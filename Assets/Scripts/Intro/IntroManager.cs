@@ -32,7 +32,6 @@ public class IntroManager : MonoBehaviour
         buttons = null;
         _oldSelectedBtn = null;
         _startGameBtn = null;
-        Debug.Log($"//. On finish with destroying references types");
     }
 
     private void Awake()
@@ -60,4 +59,5 @@ public class IntroManager : MonoBehaviour
         _oldSelectedBtn = inButton;
         _startGameBtn.button.interactable = true;
     }
+    
 }
