@@ -42,6 +42,7 @@ namespace Scripts
             _instance = this;
 
             _waitForSeconds = new WaitForSeconds(0.6f);
+            
             foreach (var btn in gridItems)
             {
                 btn.OnClick += BtnClicked;
