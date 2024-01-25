@@ -49,6 +49,7 @@ public class IntroManager : MonoBehaviour
     {
         if (inButton.buttonAction == ButtonName.StartGame)
         {
+            // todo: Add async loading system 
             SceneManager.LoadScene(GameConstants.InGameSceneName);
             return;
         }
