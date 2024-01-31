@@ -7,9 +7,9 @@ public class PoolableObject : MonoBehaviour
     [SerializeField] private Text text;
     [SerializeField] private ObjectType type;
 
-    public ObjectType Type => type;
     private RectTransform _rt;
-
+    public ObjectType Type => type;
+    
     public RectTransform RectTransform
     {
         get
