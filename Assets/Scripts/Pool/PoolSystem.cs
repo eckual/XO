@@ -37,6 +37,7 @@ namespace Scripts
         {
             if (_instance != null) return;
             _instance = this;
+            
             _currentObjects = new List<PoolableObject>();
 
             for (var i = 0; i < poolInfos.Count; i++)
