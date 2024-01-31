@@ -7,6 +7,7 @@ public class PoolableObject : MonoBehaviour
     [SerializeField] private Text text;
     [SerializeField] private ObjectType type;
 
+    public ObjectType Type => type;
     private RectTransform _rt;
 
     public RectTransform RectTransform
@@ -17,8 +18,6 @@ public class PoolableObject : MonoBehaviour
             return _rt;
         }
     }
-
-    public ObjectType Type => type;
 
     private void OnDestroy()
     {
